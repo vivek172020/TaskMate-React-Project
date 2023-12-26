@@ -11,7 +11,6 @@ export default function UpdateTask() {
         if (localStorage.getItem('TaskMate')) {
             let Taskdata = JSON.parse(localStorage.getItem('TaskMate'));
             setData(Taskdata);
-
         }
     }, []);
 
@@ -22,7 +21,7 @@ export default function UpdateTask() {
     const MyTaskData = () => {
         let url = window.location.href;
         let id = url.substring(url.lastIndexOf('/') + 1);
-        console.log(id);
+
         if (id) {
             for (let i = 0; i < Data.length; i++) {
                 if (Data[i].id == id) {
@@ -56,7 +55,6 @@ export default function UpdateTask() {
                 return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;
             }
         }
-
         return '';
     };
 

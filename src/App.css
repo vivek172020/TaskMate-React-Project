@@ -82,6 +82,13 @@
 
 }
 
+@media only screen and (max-width: 992px) {
+  .Mynav {
+    position: relative;
+    max-width: 32px;
+  }
+}
+
 .tss-1qtl85h-MUIDataTableBodyCell-root p {
   margin-bottom: 0;
 }

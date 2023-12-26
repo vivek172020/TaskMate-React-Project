@@ -25,7 +25,6 @@ export default function ViewTask() {
             let Taskdata = JSON.parse(localStorage.getItem('TaskMate'))
             setData(Taskdata)
         }
-
     }, [])
 
     const handleDelete2 = (id) => {
@@ -37,26 +36,20 @@ export default function ViewTask() {
             setCartLength(Taskdelete.length)
             localStorage.setItem('TaskMate', JSON.stringify(Taskdelete))
             alert('Task Delete Successfully')
-
         }
     }
     const handleDelete = (id) => {
         if (id) {
-
             const updatedData = Data.filter((_, index) => !id.includes(index));
-
             setData(updatedData);
             setCartLength(updatedData.length);
             localStorage.setItem('TaskMate', JSON.stringify(updatedData));
-
             alert('Selected tasks deleted successfully');
         }
     }
 
     const handleEdit = (id) => {
-        console.log(id)
         setTaskEditID(id)
-
         setShow(true);
         for (let i = 0; i < Data.length; i++) {
             if (Data[i].id == id) {

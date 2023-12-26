@@ -15,31 +15,27 @@ function MyHeader() {
             let Taskdata = JSON.parse(localStorage.getItem('TaskMate'))
             setData(Taskdata)
         }
-
     }, [])
 
     useEffect(() => {
         setCartLength(Data.length);
     }, [Data]);
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
-            <Container>
-                <Navbar.Brand as={Link} to="/">TaskMate</Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarScroll" />
-                <Navbar.Collapse id="navbarScroll">
-                    <Nav
-                        className="ms-auto my-2 my-lg-0"
-                        style={{ maxHeight: '100px' }}
-                        navbarScroll
-                    >
-                        <Nav.Link as={NavLink} to="/">Home</Nav.Link>
-                        <Nav.Link as={NavLink} to="/ViewTask">View</Nav.Link>
-                        <Nav.Link className='Mynav'> <img src={Myimg} /><span className='Mycart'>{CartLength}</span></Nav.Link>
-
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+        <>
+            <Navbar expand="lg" className="bg-body-tertiary">
+                <Container>
+                    <Navbar.Brand as={Link} to="/">TaskMate</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="navbarScroll" />
+                    <Navbar.Collapse id="navbarScroll">
+                        <Nav className="ms-auto my-2 my-lg-0" navbarScroll>
+                            <Nav.Link as={NavLink} to="/">Home</Nav.Link>
+                            <Nav.Link as={NavLink} to="/ViewTask">View</Nav.Link>
+                            <Nav.Link className='Mynav'> <img src={Myimg} /><span className='Mycart'>{CartLength}</span></Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </>
     );
 }
 
