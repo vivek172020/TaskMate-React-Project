@@ -11,8 +11,11 @@ function MyHeader() {
     const [Data, setData] = useState([])
 
     useEffect(() => {
-        let Taskdata = JSON.parse(localStorage.getItem('TaskMate'))
-        setData(Taskdata)
+        if (localStorage.getItem('TaskMate')) {
+            let Taskdata = JSON.parse(localStorage.getItem('TaskMate'))
+            setData(Taskdata)
+        }
+
     }, [])
 
     useEffect(() => {

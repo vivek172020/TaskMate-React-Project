@@ -21,8 +21,10 @@ export default function ViewTask() {
     const Navigate = useNavigate()
 
     useEffect(() => {
-        let Taskdata = JSON.parse(localStorage.getItem('TaskMate'))
-        setData(Taskdata)
+        if (localStorage.getItem('TaskMate')) {
+            let Taskdata = JSON.parse(localStorage.getItem('TaskMate'))
+            setData(Taskdata)
+        }
 
     }, [])
 

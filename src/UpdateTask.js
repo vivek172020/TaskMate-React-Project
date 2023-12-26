@@ -8,8 +8,11 @@ export default function UpdateTask() {
     const [CurrentTaskData, setCurrentTaskData] = useState();
 
     useEffect(() => {
-        let Taskdata = JSON.parse(localStorage.getItem('TaskMate'));
-        setData(Taskdata);
+        if (localStorage.getItem('TaskMate')) {
+            let Taskdata = JSON.parse(localStorage.getItem('TaskMate'));
+            setData(Taskdata);
+
+        }
     }, []);
 
     useEffect(() => {
